@@ -18,7 +18,7 @@ var mdb *mgo.Session
 
 func main() {
 	var err error
-	mdb, err = mgo.Dial("localhost")
+	mdb, err = mgo.Dial("mongo")
 
 	if err != nil {
 		fmt.Println("Could not connect ot MongoDB: ", err)
