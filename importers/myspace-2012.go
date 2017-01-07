@@ -29,7 +29,7 @@ type MyspaceData struct {
 
 func main() {
 	// Connect to mongodb
-	mdb, err := mgo.Dial("localhost")
+	mdb, err := mgo.Dial("mongo")
 	defer mdb.Close()
 
 	mdb.SetSocketTimeout(24 * time.Hour)

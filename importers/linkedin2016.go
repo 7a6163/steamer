@@ -24,7 +24,7 @@ type LinkedinData struct {
 
 func main() {
 	// Connect to mongodb
-	mdb, err := mgo.Dial("localhost")
+	mdb, err := mgo.Dial("mongo")
 	mdb.SetSocketTimeout(48 * time.Hour)
 	defer mdb.Close()
 

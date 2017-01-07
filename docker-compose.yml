@@ -1,0 +1,25 @@
+version: '2'
+services:
+  mongo:
+    image: mongo:latest
+    volumes:
+      - db_data:/data/db
+
+  steamer:
+    build:
+      context: .
+    ports:
+      - 8080:8080/tcp
+    command:
+      - bash
+      - -c
+      - go run ./steamer.go
+    links:
+      - 'mongo:mongo'
+    volumes:
+      - .:/steamer
+    stdin_open: true
+    tty: true
+
+volumes:
+  db_data:
