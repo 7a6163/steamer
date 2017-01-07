@@ -21,7 +21,7 @@ type LinkedinData struct {
 
 func main() {
 	// Connect to mongodb
-	mdb, err := mgo.Dial("localhost")
+	mdb, err := mgo.Dial("mongo")
 	defer mdb.Close()
 
 	// set timeout high to prevent timeouts (weird!)
